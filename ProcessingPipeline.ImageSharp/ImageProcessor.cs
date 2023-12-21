@@ -10,7 +10,7 @@ namespace ProcessingPipeline.ImageSharp;
 
 public static class ImageProcessor
 {
-    public static IImageProcessingContext SmartResize(this IImageProcessingContext ctx, AspectRatio ratio, Size maxSize)
+    public static IImageProcessingContext SmartResize(this IImageProcessingContext ctx, AspectRatio ratio, Size size)
     {
         // TODO: Compute blurhash for the image
         // TODO: Create blurhash layer background

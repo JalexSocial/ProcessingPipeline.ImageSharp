@@ -9,7 +9,13 @@ using SixLabors.ImageSharp.Processing;
 using (var img = Image.Load("bulldog.webp"))
 {
     // clone the original image, since we need this for future runs of the application
-    using (Image destRound = img.Clone(x => x.SmartResize(AspectRatio.Landscape16x9, new Size(1280, 720)).ApplyRoundedCorners(150f)))
+    using (Image destRound = img.Clone(x => x.SmartResize(AspectRatio.Landscape16x9, new Size(1280, 720))
+               .Resize(new ResizeOptions
+                   {
+                       Mode = ResizeMode.Max,
+                       Size = new Size(1280, 720),
+                   })
+               .ApplyRoundedCorners(150f)))
     {
         destRound.Save("output.webp", new WebpEncoder());
     }
