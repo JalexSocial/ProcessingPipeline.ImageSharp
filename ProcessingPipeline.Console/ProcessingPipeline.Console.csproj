@@ -11,4 +11,10 @@
     <ProjectReference Include="..\ProcessingPipeline.ImageSharp\ProcessingPipeline.ImageSharp.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="bulldog.webp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
