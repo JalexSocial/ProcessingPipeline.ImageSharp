@@ -24,7 +24,7 @@ public static class ImageProcessor
 
     // This method can be seen as an inline implementation of an `IImageProcessor`:
     // (The combination of `IImageOperations.Apply()` + this could be replaced with an `IImageProcessor`)
-    private static IImageProcessingContext ApplyRoundedCorners(this IImageProcessingContext ctx, float cornerRadius)
+    public static IImageProcessingContext ApplyRoundedCorners(this IImageProcessingContext ctx, float cornerRadius)
     {
         Size size = ctx.GetCurrentSize();
         IPathCollection corners = BuildCorners(size.Width, size.Height, cornerRadius);
