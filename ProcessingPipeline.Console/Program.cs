@@ -3,20 +3,35 @@
 using ProcessingPipeline.ImageSharp;
 using ProcessingPipeline.ImageSharp.Models;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Webp;
+using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
-using (var img = Image.Load("bulldog.webp"))
+string filename = "bulldog.webp";
+
+using var img = Image.Load(filename);
+
+using var foreground = img.Clone(fg => fg.Resize(new ResizeOptions
 {
-    // clone the original image, since we need this for future runs of the application
-    using (Image destRound = img.Clone(x => x.SmartResize(AspectRatio.Landscape16x9, new Size(1280, 720))
-               .Resize(new ResizeOptions
-                   {
-                       Mode = ResizeMode.Max,
-                       Size = new Size(1280, 720),
-                   })
-               .ApplyRoundedCorners(150f)))
-    {
-        destRound.Save("output.webp", new WebpEncoder());
-    }
-}
+	Mode = ResizeMode.Max,
+	Size = new Size(1280, 720),
+}));
+
+// clone the original image, since we need this for future runs of the application
+using Image background = img.Clone(x => x
+	.Resize(new ResizeOptions
+	{
+		Mode = ResizeMode.Stretch,
+		Size = new Size(1280, 720),
+	})
+	.GaussianBlur(100f)
+	.Brightness(0.5f)
+	.DrawImage(foreground, new Point(1280/2-foreground.Width/2, 0), 1f ))
+	;
+
+background.Save("output.jpg", new JpegEncoder()
+{
+	Quality = 100
+});
+
