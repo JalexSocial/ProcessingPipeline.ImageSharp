@@ -8,6 +8,8 @@ using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
+
+
 string filename = "bulldog.webp";
 
 using var img = Image.Load(filename);
