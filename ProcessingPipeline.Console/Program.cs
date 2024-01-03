@@ -10,10 +10,20 @@ using SixLabors.ImageSharp.Processing;
 
 
 
-string filename = "bulldog.webp";
+string filename = "Landscape-Color.jpg";
+// string filename = "15542038745ca344e267fb80.webp";
 
 using var img = Image.Load(filename);
 
+ImageProcessingPipelineService a = new ImageProcessingPipelineService();
+
+a.SmartResize(img, AspectRatio.Landscape16x9, 1080).Save("output.jpg", new JpegEncoder()
+{
+	Quality = 100
+});
+
+
+/*
 using var foreground = img.Clone(fg => fg.Resize(new ResizeOptions
 {
 	Mode = ResizeMode.Max,
@@ -36,4 +46,4 @@ background.Save("output.jpg", new JpegEncoder()
 {
 	Quality = 100
 });
-
+*/
