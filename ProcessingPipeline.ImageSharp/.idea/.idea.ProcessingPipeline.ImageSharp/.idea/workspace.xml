@@ -8,6 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac03f2d2-b690-4838-b9a0-fff38191e5df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ProcessingPipeline.Console/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessingPipeline.Console/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProcessingPipeline.ImageSharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProcessingPipeline.ImageSharp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" afterDir="false" />
     </list>
@@ -36,27 +37,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.ProcessingPipeline.Console.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.ProcessingPipeline.Console.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/sky/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/sky/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ProcessingPipeline.Console" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -88,7 +89,7 @@
       <workItem from="1703181153006" duration="17533000" />
       <workItem from="1704249687505" duration="9336000" />
       <workItem from="1704259872272" duration="60000" />
-      <workItem from="1704371391838" duration="3767000" />
+      <workItem from="1704371391838" duration="9005000" />
     </task>
     <servers />
   </component>
@@ -97,5 +98,39 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageProcessingPipelineService.cs</url>
+          <line>37</line>
+          <properties documentPath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" initialLine="36" containingFunctionPresentation="Method 'SmartResize'">
+            <startOffsets>
+              <option value="1293" />
+              <option value="1333" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1507" />
+              <option value="1492" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ImageProcessingPipelineService.cs</url>
+          <line>33</line>
+          <properties documentPath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" initialLine="33" containingFunctionPresentation="Method 'SmartResize'">
+            <startOffsets>
+              <option value="1160" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1203" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

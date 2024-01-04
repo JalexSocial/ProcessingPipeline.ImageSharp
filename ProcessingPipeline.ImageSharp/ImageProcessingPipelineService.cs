@@ -28,6 +28,23 @@ public class ImageProcessingPipelineService
         // Depending on the input image's aspect ratio, set the background location accordingly
         Point backgroundLocation;
         
+        // Checking if aspect ratio is close enough to crop
+        int cropCeiling = (int) (image.Width * size.Height * 1.10);
+        int cropFloor = (int) (image.Width * size.Height * 0.90);
+        int comparator = image.Height * size.Width;
+
+        if (comparator <= cropCeiling && comparator >= cropFloor)
+        {
+            Image croppedImage = image.Clone(img => img
+                .Resize(new ResizeOptions
+                {
+                    Mode = ResizeMode.Crop,
+                    Size = size,
+                })
+            );
+            return croppedImage;
+        }
+        
         // The input image is wider than requested
         if (image.Width * size.Height > image.Height * size.Width)
         {
@@ -38,7 +55,7 @@ public class ImageProcessingPipelineService
         {
             backgroundLocation = new Point(size.Width / 2 - foreground.Width / 2, 0);
         }
-        // The input image is already the correct aspect ratio
+        // The input image is already the correct aspect ratio. Should not execute!
         else
         {
             backgroundLocation = new Point(0, 0);

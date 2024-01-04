@@ -11,15 +11,15 @@ using SixLabors.ImageSharp.Processing;
 
 
 
-// string filename = "Landscape-Color.jpg";
-string filename = "15542038745ca344e267fb80.webp";
+string filename = "Landscape-Color.jpg";
+// string filename = "15542038745ca344e267fb80.webp";
 
 using var img = Image.Load(filename);
 
 ImageProcessingPipelineService a = new ImageProcessingPipelineService();
 
 var s = Stopwatch.StartNew();
-a.SmartResize(img, AspectRatio.Landscape16x9, 1080).Save("output.jpg", new JpegEncoder()
+a.SmartResize(img, new AspectRatio(16, 7), 1600).Save("output.jpg", new JpegEncoder()
 {
 	Quality = 100
 });
