@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics;
 using ProcessingPipeline.ImageSharp;
 using ProcessingPipeline.ImageSharp.Models;
 using SixLabors.ImageSharp;
@@ -10,18 +11,19 @@ using SixLabors.ImageSharp.Processing;
 
 
 
-string filename = "Landscape-Color.jpg";
-// string filename = "15542038745ca344e267fb80.webp";
+// string filename = "Landscape-Color.jpg";
+string filename = "15542038745ca344e267fb80.webp";
 
 using var img = Image.Load(filename);
 
 ImageProcessingPipelineService a = new ImageProcessingPipelineService();
 
+var s = Stopwatch.StartNew();
 a.SmartResize(img, AspectRatio.Landscape16x9, 1080).Save("output.jpg", new JpegEncoder()
 {
 	Quality = 100
 });
-
+Console.Out.WriteLine(s.ElapsedMilliseconds);
 
 /*
 using var foreground = img.Clone(fg => fg.Resize(new ResizeOptions

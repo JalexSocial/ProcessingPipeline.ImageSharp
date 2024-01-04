@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac03f2d2-b690-4838-b9a0-fff38191e5df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ProcessingPipeline.Console/ProcessingPipeline.Console.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessingPipeline.Console/ProcessingPipeline.Console.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ProcessingPipeline.Console/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessingPipeline.Console/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProcessingPipeline.ImageSharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProcessingPipeline.ImageSharp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +25,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6f16bb308cc0bad68d8e57f92553be9787ee797f73cef8ddad13fbb165982/Size.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/746e7c2433cbc673798843c39341c97192531fafb5a2e7849daeb3fe0997949/DecoderOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9caee1cf1b78ad8c49f1a994f8548aadf0b3e0c0e7f607831729a7c83f0/IImageProcessor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b1de27fdbb166cb8456971f51593e3ff203c6ba09deee9bc40bab74489149c/ResizeOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b7847239ff802af7bdbf7735bfca751c724e7ed489e1757ff9b69f816544ff/IImageProcessingContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d34fd5bb1bae90f26dc59ca29671df440ba176795417f1d2a69e92f968a9/Image.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -36,27 +37,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.ProcessingPipeline.Console.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.ProcessingPipeline.Console.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/sky/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/sky/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/sky/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ProcessingPipeline.Console" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -86,7 +87,9 @@
       <option name="presentableId" value="Default" />
       <updated>1703181151907</updated>
       <workItem from="1703181153006" duration="17533000" />
-      <workItem from="1704249687505" duration="8785000" />
+      <workItem from="1704249687505" duration="9336000" />
+      <workItem from="1704259872272" duration="60000" />
+      <workItem from="1704371391838" duration="3001000" />
     </task>
     <servers />
   </component>

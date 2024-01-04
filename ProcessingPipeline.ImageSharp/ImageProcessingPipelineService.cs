@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,10 @@ public class ImageProcessingPipelineService
 
         Image finalImage = image;
         
-        if (image.Width * size.Height >= image.Height * size.Width)
+        if (image.Width * size.Height > image.Height * size.Width)
         {
-            Image compositeImage = image.Clone(img => img
+            // Removed `using`
+            /*Image compositeImage = image.Clone(img => img
                 .Resize(new ResizeOptions
                 {
                     Mode = ResizeMode.Stretch,
@@ -37,22 +39,50 @@ public class ImageProcessingPipelineService
                 .Brightness(0.5f)
                 .DrawImage(foreground, new Point(0, size.Height / 2 - foreground.Height / 2), 1f)
             );
-            finalImage = compositeImage;
-        } else if (image.Width * size.Height < image.Height * size.Width)
-        {
+            finalImage = compositeImage;*/
+            
+            // Removed `using`
             Image compositeImage = image.Clone(img => img
+                .Resize(new ResizeOptions
+                {
+                    Mode = ResizeMode.Stretch,
+                    Size = new Size(300, 300),
+                })
+                .GaussianBlur(50f)
                 .Resize(new ResizeOptions
                 {
                     Mode = ResizeMode.Stretch,
                     Size = size,
                 })
-                .GaussianBlur(100f)
+                .Brightness(0.5f)
+                .DrawImage(foreground, new Point(0, size.Height / 2 - foreground.Height / 2), 1f)
+                
+            );
+            finalImage = compositeImage;
+        } 
+        else if (image.Width * size.Height < image.Height * size.Width)
+        {
+            Image compositeImage = image.Clone(img => img
+                .Resize(new ResizeOptions
+                {
+                    Mode = ResizeMode.Stretch,
+                    Size = new Size(300, 300),
+                })
+                .GaussianBlur(50f)
+                .Resize(new ResizeOptions
+                {
+                    Mode = ResizeMode.Stretch,
+                    Size = size,
+                })
                 .Brightness(0.5f)
                 .DrawImage(foreground, new Point(size.Width / 2 - foreground.Width / 2, 0), 1f)
             );
             finalImage = compositeImage;
         }
-
+        else
+        {
+            
+        }
         return finalImage;
     }
 }
