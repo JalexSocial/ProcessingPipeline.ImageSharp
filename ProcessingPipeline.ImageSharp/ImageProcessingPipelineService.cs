@@ -66,7 +66,7 @@ public class ImageProcessingPipelineService
             .Resize(new ResizeOptions
             {
                 Mode = ResizeMode.Stretch,
-                Size = new Size(300, 300),
+                Size = new Size((300 / ratio.Height + 1) * ratio.Width, (300 / ratio.Height + 1) * ratio.Height),
             })
             .GaussianBlur(50f)
             .Resize(new ResizeOptions
