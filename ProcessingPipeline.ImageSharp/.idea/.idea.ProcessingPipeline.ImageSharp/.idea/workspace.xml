@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac03f2d2-b690-4838-b9a0-fff38191e5df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ProcessingPipeline.Console/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessingPipeline.Console/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProcessingPipeline.ImageSharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProcessingPipeline.ImageSharp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ImageProcessingPipelineService.cs" afterDir="false" />
     </list>
@@ -89,7 +88,7 @@
       <workItem from="1703181153006" duration="17533000" />
       <workItem from="1704249687505" duration="9336000" />
       <workItem from="1704259872272" duration="60000" />
-      <workItem from="1704371391838" duration="3001000" />
+      <workItem from="1704371391838" duration="3767000" />
     </task>
     <servers />
   </component>
