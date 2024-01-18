@@ -349,3 +349,5 @@ healthchecksdb
 MigrationBackup/
 
 ProcessingPipeline.ImageSharp/.idea/.idea.ProcessingPipeline.ImageSharp/.idea/
+
+.DS_Store
