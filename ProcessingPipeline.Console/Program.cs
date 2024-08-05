@@ -11,7 +11,7 @@ using SixLabors.ImageSharp.Processing;
 
 
 
-string filename = "Landscape-Color.jpg";
+string filename = "bulldog.webp";
 // string filename = "15542038745ca344e267fb80.webp";
 
 using var img = Image.Load(filename);
