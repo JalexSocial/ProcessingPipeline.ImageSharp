@@ -12,6 +12,69 @@ namespace ProcessingPipeline.ImageSharp;
 
 public class ImageProcessingPipelineService
 {
+	/// <summary>
+	/// Determines the most appropriate aspect ratio for a given image dimension from a set of predefined aspect ratios.
+	/// </summary>
+	/// <param name="width">The width of the image in pixels.</param>
+	/// <param name="height">The height of the image in pixels.</param>
+	/// <param name="ratios">An array of AspectRatio objects to choose from.</param>
+	/// <returns>
+	/// The AspectRatio that most closely matches the input dimensions. 
+	/// Returns AspectRatio.Undefined if the input dimensions are invalid.
+	/// </returns>
+	/// <remarks>
+	/// This method calculates the aspect ratio of the input dimensions and compares it to each of the provided aspect ratios.
+	/// It selects the AspectRatio with the smallest difference from the input ratio.
+	/// </remarks>
+	/// <exception cref="ArgumentNullException">Thrown when the ratios array is null.</exception>
+	/// <exception cref="ArgumentException">Thrown when the ratios array is empty.</exception>
+    public static AspectRatio GetMostAppropriateAspectRatio(int width, int height, AspectRatio[] ratios)
+	{
+		if (width <= 0 || height <= 0)
+		{
+			return AspectRatio.Undefined;
+		}
+
+		if (ratios == null)
+			throw new ArgumentNullException(nameof(ratios));
+
+		if (ratios.Length == 0)
+			throw new ArgumentException("The array of aspect ratios cannot be empty.", nameof(ratios));
+
+        double inputRatio = (double)width / height;
+		AspectRatio closestRatio = ratios[0];
+		double smallestDifference = double.MaxValue;
+
+		foreach (var ratio in ratios)
+		{
+			double difference = Math.Abs(inputRatio - ratio.Ratio);
+
+			if (difference < smallestDifference)
+			{
+				smallestDifference = difference;
+				closestRatio = ratio;
+			}
+		}
+
+		return closestRatio;
+	}
+
+	/// <summary>
+	/// Resizes and adjusts an image to fit a specified aspect ratio and width, applying smart cropping or padding as needed.
+	/// </summary>
+	/// <param name="image">The source image to be resized.</param>
+	/// <param name="ratio">The target aspect ratio for the output image.</param>
+	/// <param name="width">The desired width of the output image in pixels.</param>
+	/// <returns>A new Image object resized and adjusted to match the specified aspect ratio and width.</returns>
+	/// <remarks>
+	/// This method performs the following operations:
+	/// 1. If the input image's aspect ratio is close to the target ratio, it crops the image to fit.
+	/// 2. If cropping is not suitable, it resizes the image and adds a blurred, darkened background to maintain the aspect ratio.
+	/// 3. The background is created by stretching, blurring, and darkening a copy of the original image.
+	/// 4. The resized original image is then centered on this background.
+	/// 
+	/// The method uses a 10% tolerance when deciding whether to crop or pad the image.
+	/// </remarks>
     public Image SmartResize(Image image, AspectRatio ratio, int width)
     {
         // Forming the final image size using aspect ratio and width
