@@ -46,6 +46,6 @@ public class AspectRatio
 	    Panorama2x1,
 	    WidePanorama3x1
     };
-
+    
     public double Ratio => (double)Width / Height;
 }
