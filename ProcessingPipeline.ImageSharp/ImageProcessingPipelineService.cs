@@ -80,7 +80,10 @@ public class ImageProcessingPipelineService
         // Forming the final image size using aspect ratio and width
         Size size = new Size(width, 0);
         size.Height = size.Width / ratio.Width * ratio.Height;
-        
+
+        // Orient image according to stored EXIF data
+        image.Mutate(x => x.AutoOrient());
+
         // Resizing the foreground image to the requested size
         var foreground = image.Clone(fg => fg.Resize(new ResizeOptions
         {
